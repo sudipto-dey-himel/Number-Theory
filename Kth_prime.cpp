@@ -10,7 +10,7 @@ const int M = 1e7 + 10;
 using namespace std;
 
 vector<ll>V;
-ll prime[M];
+ll prime[M]={0};
 
 void kth_prime() {
     for(ll i=2; i*i<=M; i++) {
