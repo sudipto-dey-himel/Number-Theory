@@ -10,7 +10,7 @@ using namespace std;
 void sieve() {
     ll n;
     cin>>n;
-    ll prime[n+5];
+    ll prime[n+5];   //ll prime[n+5]={0} -> *if we use this then the memset function will be removed*
     memset(prime, 0, sizeof(prime));
 
     for(ll i=2; i*i<=n; i++) {
