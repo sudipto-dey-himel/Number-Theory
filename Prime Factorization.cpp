@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void primeFect() {
+void primeFact() {
     ll n;
     cin>>n;
     for(ll i=2; i<=sq(n); i++) {
@@ -29,7 +29,7 @@ int main() {
     opt();
 
     tc() {
-        primeFect();
+        primeFact();
     }
     return 0;
 }
