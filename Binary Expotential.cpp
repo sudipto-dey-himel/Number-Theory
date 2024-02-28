@@ -10,7 +10,7 @@ using namespace std;
 void binaryExpotential(ll base, ll power) {
     ll res=1;
     while(power>0) {
-        if(power%2) {
+        if(power&1) {
             res *= base;
             res %= M;
             power--;
@@ -18,7 +18,7 @@ void binaryExpotential(ll base, ll power) {
         else {
             base *= base;
             base %= M;
-            power /= 2;
+            power >>= 2;
         }
     }
     cout<<res<<endl;
