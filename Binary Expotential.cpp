@@ -3,7 +3,7 @@
 #define endl   '\n'
 #define tc()   ll test_case;cin>>test_case;while(test_case--)
 #define opt()  ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-const ll M = 10e7+10;
+const ll MOD = 10e7+10;
 
 using namespace std;
 
@@ -12,12 +12,12 @@ void binaryExpotential(ll base, ll power) {
     while(power>0) {
         if(power&1) {
             res *= base;
-            res %= M;
+            res %= MOD;
             power--;
         }
         else {
             base *= base;
-            base %= M;
+            base %= MOD;
             power >>= 2;
         }
     }
