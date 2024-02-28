@@ -18,7 +18,7 @@ void binaryExpotential(ll base, ll power) {
         else {
             base *= base;
             base %= MOD;
-            power >>= 2;
+            power >>= 1;
         }
     }
     cout<<res<<endl;
