@@ -1,3 +1,5 @@
+// All prime numbers upto 1e8
+
 #include<bits/stdc++.h>
 #define ll long long
 #define endl '\n'
@@ -6,42 +8,34 @@
 #define opt()  ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 
 using namespace std;
+const int N = 1e8;
+
+bitset<N> isPrime;
 
 void sieve() {
-    ll n;
-    cin>>n;
-    ll prime[n+5];   //ll prime[n+5]={0} -> *if we use this then the memset function will be removed*
-    memset(prime, 0, sizeof(prime));
-
-    for(ll i=2; i*i<=n; i++) {
-        if(prime[i]==0) {
-            for(ll j=i*i; j<=n; j+=i) {
-                prime[j]=1;
+    isPrime[2] = true;
+    for(int i=3; i<N; i+=2) isPrime[i] = true;
+    for(int i=2; i*i<N; i++) {
+        if(isPrime[i]) {
+            for(int j=i*i; j<N; j+=i) {
+                isPrime[j] = false;
             }
         }
     }
-
-    for(ll i=2; i<=n; i++) {
-        if(prime[i]==0)
-        cout<<i<<" ";
-    }
-    cout<<endl;
 }
 
 int main() {
-
     opt();
-
-    tc() {
-        sieve();
+    
+    sieve();
+    vector<int> primes;
+    for(int i=2; i<N; i++) {
+        if(isPrime[i]) primes.push_back(i);
     }
+
+    for(int i=0; i<primes.size(); i++) {
+        cout<<primes[i]<<endl;
+    }
+
     return 0;
 }
-
-/* Input:
-1
-30
-
-Output:
-2 3 5 7 11 13 17 19 23 29
-*/
