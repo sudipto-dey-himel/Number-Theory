@@ -7,9 +7,9 @@ bitset<N> isPrime;
 void sieve(int n) {
     isPrime[2] = true;
     for(int i=3; i<n; i+=2) isPrime[i] = true;
-    for(int i=2; i*i<n; i++) {
+    for(int i=2; i*i<=n; i++) {
         if(isPrime[i]) {
-            for(int j=i*i; j<n; j+=i) {
+            for(int j=i*i; j<=n; j+=i) {
                 isPrime[j] = false;
             }
         }
