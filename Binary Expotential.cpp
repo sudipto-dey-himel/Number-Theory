@@ -7,21 +7,15 @@ const ll MOD = 10e7+10;
 
 using namespace std;
 
-void binaryExpotential(ll base, ll power) {
+ll binaryExpotential(ll n, ll k) {
     ll res=1;
-    while(power>0) {
-        if(power&1) {
-            res *= base;
-            res %= MOD;
-            power--;
-        }
-        else {
-            base *= base;
-            base %= MOD;
-            power >>= 1;
-        }
+    n %= MOD;
+    while(k) {
+        if(k&1)  res = (res*n)%MOD;
+        n = (n*n)%MOD;
+        k >>= 1;
     }
-    cout<<res<<endl;
+    return res;
 }
 
 int main() {
